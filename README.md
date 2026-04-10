@@ -54,3 +54,10 @@ Official Python SDK for [Echo Prompt Manager](https://github.com/PeterShanxin/ec
 
 ```bash
 pip install echo-saas-sdk
+
+from echo_saas_sdk import EchoSaasClient
+from echo_saas_sdk.models import AssetCreate, AssetVersionCreate
+
+client = EchoSaasClient(base_url="https://your-echo-saas.com")
+asset = client.create_asset(AssetCreate(name="chat_prompt", asset_type="prompt", owner="team"))
+active = client.get_active_version("chat_prompt")
